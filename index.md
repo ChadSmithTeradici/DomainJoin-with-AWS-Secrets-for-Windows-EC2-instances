@@ -53,6 +53,9 @@ In this section, you create and configure a series of Secrets key/value pairs fo
     + In secret type: Select **Other type of secrets**.
     + In the Secrets key/value field create 2 key/vaule pairs: key named **ServiceAccount** with a AD user/service account that can add machines to AD.  Also a named **Password** and its assoicated the AD password created for the user/service created in AD.
     + Keep the Select the encryption key the default **DefaultEncryptionKey**
+    
+    ![image]()
+    
   
 
 ## Procure the EC2 Nvidia Instance
