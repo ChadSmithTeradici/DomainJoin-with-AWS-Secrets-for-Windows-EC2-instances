@@ -1,6 +1,6 @@
 ---
 title: Domain Join with AWS secrets service
-description: When configuring windows EC2 instances, this script allows you to Join a Domain and keep the domain level credentials safe in AWS secrets service.
+description: When configuring windows EC2 instances, this script allows a EC2 instance to join a domain and keep the credentials safe in AWS secrets service.
 author: chad-m-smith
 tags: AWS, Active Directory, EC2
 date_published: 2021-10-20
@@ -10,24 +10,22 @@ Chad Smith | Technical Alliance Architect at Teradici | HP
 
 <p style="background-color:#CAFACA;"><i>Contributed by Teradici employees.</i></p>
 
-This guide shows you how to install Teradici PCoIP agent on a Nvidia powered instance running in AWS. Also this guide is intended for customers that have Teradici annual subcription and are interested in transfering licensed seats to a AWS EC2 instance(s). There is an alternative option for a AWS marketplace hourly subscription with pre-packaged AMI for [Windows 2019](https://aws.amazon.com/marketplace/pp/prodview-boeg6hiewus3o?sr=0-1&ref_=beagle&applicationId=AWSMPContessa) and [CentOS 7](https://aws.amazon.com/marketplace/pp/prodview-yjdn554yaqvem?sr=0-2&ref_=beagle&applicationId=AWSMPContessa). AWS marketplace offering is NOT apart of this deployment guide. 
+Credit to http://beta.awsdocs.com/ for baseline documents, this guide alters scripts, add additonal secrects and tightens access serects. 
 
-EC2 instances are available for purchase through On Demand and Savings Plans pricing models. Billing for EC2 instances is per second with a 1hr-hour minimum allocation period to comply with the Mircosft Software License Agreement for windows. You can launch an EC2 instanes and be up and running within minutes. At the end of the 1-hour minimum allocation period, the host can be released at any time without further commitment. 
+This script was designed to run on a freshly deployed Windows EC2 instance. Its function is to make a request to the AWS Secrets Manager to get the proper Active Directory Service Account credentials of a user that has delegated control to perform domain join operations. This negates the necessity of having hard coded username and password values sitting in the unattend.xml or the accompanying windows domain join powerShell script saved within the base AMI. The script performs the following actions:
 
-More Information on EC2 instance can be found [here](https://aws.amazon.com/ec2/pricing/on-demand/).
 
 ## Objectives
 
-+ Allocate a AWS EC2 Nvidia powered instance from AWS Console.
-+ Drop in deployment script based on OS type
-+ Configure Security Groups to allows access to instance (SSH,RDP & PCoIP ports).
-+ Connect to EC2 instance via PCoIP client
++ Create key/value pair in AWS Secrets
++ Create an IAM role to lock down access to Secrets
++ Allocate a AWS EC2 instance from AWS Console.
++ Drop in deployment script in User Defined (or) Windows local GPO
++ Start EC2 instance, verify domain join.
 
 ## Costs
 
 This tutorial uses billable components of AWS Cloud and assumes Teradici subscription, including the following:
-
-+   [Teradici PCoIP](https://connect.teradici.com/contact-us), Teradici PCoIP subscriptions
 +   [AWS Nvidia EC2 Instance](https://aws.amazon.com/nvidia/), including vCPUs, memory, disk, and GPUs
 +   [Internet egress and transfer costs](https://aws.amazon.com/blogs/architecture/overview-of-data-transfer-costs-for-common-architectures/), for PCoIP and other applications communications
 
