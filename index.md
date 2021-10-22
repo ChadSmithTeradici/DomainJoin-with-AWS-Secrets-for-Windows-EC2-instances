@@ -43,7 +43,7 @@ In this section, you set up some basic resources that the tutorial depends on.
 
 ## Creation of AWS Secrets
 
-In this section, you create and configure a virtual workstation, including setting up networking and installing utilities. 
+In this section, you create and configure a series of Secrets key/value pairs for authentication functions in scripts.
 
 ## Procure the EC2 Nvidia Instance
 
