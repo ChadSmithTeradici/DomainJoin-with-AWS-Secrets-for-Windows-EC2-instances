@@ -62,7 +62,7 @@ In this section, you create and configure a series of Secrets key/value pairs fo
     + (optionally) enter a Tag
     + In the Resource Permissions (optional) section, click the **Edit Permissions** to lock down secrets within IAM.
 
-    ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Create_New_Secret.jpg)
+    ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Secret_name.jpg)
     
   
 
