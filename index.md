@@ -39,7 +39,7 @@ In this section, you set up some basic resources that the tutorial depends on.
 
 1. Familiarize yourself with [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/)
 
-1. Understand [IAM roles for EC2] (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html) 
+1. Understand [IAM roles for EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html) 
 
 ## Creation of AWS Secrets
 
