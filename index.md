@@ -37,17 +37,15 @@ In this section, you set up some basic resources that the tutorial depends on.
 
 1. Instructions in this guide assume that you have a [AWS account](https://aws.amazon.com/free/) 
 
-1. Ensure you have [Service Quotas](https://console.aws.amazon.com/servicequotas) for **'All G and VT Spot Instance Requests'**.
+1. Familiarize yourself with [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/)
 
-1. Familiarize yourself with [AWS network](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Networking.html) topology and best practices.
+1. Understand [IAM roles for EC2] (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html) 
 
-1. Obtain a [Teradici PCoIP registation](https://connect.teradici.com/contact-us) code that has at least one un-assigned seat available.
-
-## Set up the virtual workstation
+## Creation of AWS Secrets
 
 In this section, you create and configure a virtual workstation, including setting up networking and installing utilities. 
 
-### Procure the EC2 Nvidia Instance
+## Procure the EC2 Nvidia Instance
 
 In this section, you procure a G4dn/G5dn type dedicated host in your region
 
