@@ -3,7 +3,7 @@ title: Domain Join with AWS secrets service
 description: When configuring windows EC2 instances, this script allows a EC2 instance to join a domain and keep the credentials safe in AWS secrets service.
 author: chad-m-smith
 tags: AWS, Active Directory, EC2
-date_published: 2021-10-20
+date_published: 2021-10-22
 ---
 
 Chad Smith | Technical Alliance Architect at Teradici | HP
@@ -27,7 +27,7 @@ This script was designed to run on a freshly deployed Windows EC2 instance. Its 
 
 This tutorial uses billable components of AWS Cloud and assumes Teradici subscription, including the following:
 +   [AWS Nvidia EC2 Instance](https://aws.amazon.com/nvidia/), including vCPUs, memory, disk, and GPUs
-+   [Internet egress and transfer costs](https://aws.amazon.com/blogs/architecture/overview-of-data-transfer-costs-for-common-architectures/), for PCoIP and other applications communications
++   [Internet egress and transfer costs](https://aws.amazon.com/blogs/architecture/overview-of-data-transfer-costs-for-common-architectures/), for PCoIP and other applications communications.
 
 Use the [AWS pricing calculator](https://calculator.aws/#/) to generate a cost estimate based on your projected usage.
 
@@ -44,6 +44,14 @@ In this section, you set up some basic resources that the tutorial depends on.
 ## Creation of AWS Secrets
 
 In this section, you create and configure a series of Secrets key/value pairs for authentication functions in scripts.
+
+1. Access [AWS Secrets manager](https://us-west-2.console.aws.amazon.com/secretsmanager/home?region=us-west-2#!/home) is region specfic, so enter the region you want to deploy EC2 instances. In this example we will be using *us-west-2*.
+
+1. Select the **Store new secret** button in the upper-right hand corner of the page.
+
+1. In the new secrets creation wizard, select:
+    + In secret type: Select **Other type of secrets**.
+    + In the Secrets key/value field: Create 2 key/vaule pairs. If a key named **ServiceAccount** with a AD user/service account that can add machines to AD. Add a  second key named **Password** which is the password of the AD user/service created in AD
 
 ## Procure the EC2 Nvidia Instance
 
