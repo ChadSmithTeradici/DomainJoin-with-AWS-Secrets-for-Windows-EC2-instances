@@ -41,6 +41,9 @@ In this section, you set up some basic resources that the tutorial depends on.
 
 1. Understand [IAM roles for EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html) 
 
+## Setting Permissions to Secrets
+
+
 ## Creation of AWS Secrets
 
 In this section, you create and configure a series of Secrets key/value pairs for authentication functions in scripts.
