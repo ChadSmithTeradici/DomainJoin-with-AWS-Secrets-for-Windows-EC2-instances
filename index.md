@@ -18,7 +18,7 @@ This script is designed to run on a freshly deployed Windows EC2 instance. Its f
 ## Objectives
 
 + Create key/value pair in AWS Secrets
-+ Create an IAM role to lock down access to Secrets
++ Create an IAM role/policy to lock down access to Secrets
 + Allocate a AWS EC2 instance from AWS Console.
 + Drop in deployment script in User Defined (or) Windows local GPO
 + Start EC2 instance, verify domain join.
