@@ -80,14 +80,15 @@ In this section, you create and configure a series of Secrets key/value pairs fo
 1. Once, In the **Secret Details** page, locate the ARN section and **copy** the associated ARN to later use in the IAM role creation. 
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Locate_ARN.jpg)
-    
- 
-    
+     
 ## Setting Permissions to Secrets
 
 Create an IAM role for EC2 instance to read the secrets through the installation script to join the domain.
 
-Go to IAM -> Roles -> Create Role. Choose EC2 and click Next: Permissions. Then click Create Policy, it will open in separate web browser tab. Click on tab JSON and paste the policy:
+1. Go to IAM -> Roles -> Create Role. Choose EC2 and click Next: Permissions. 
+    ![image](
+
+3. Then click Create Policy, it will open in separate web browser tab. Click on tab JSON and paste the policy:
 
     {
         "Version": "2012-10-17",
