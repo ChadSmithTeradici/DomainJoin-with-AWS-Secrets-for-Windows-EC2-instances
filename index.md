@@ -70,6 +70,8 @@ In this section, you create and configure a series of Secrets key/value pairs fo
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/StoreNewSecret.jpg)
     
  1. fkdsakjf
+
+    ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/ConfirmSecrets.jpg)
  
     
 ## Setting Permissions to Secrets
