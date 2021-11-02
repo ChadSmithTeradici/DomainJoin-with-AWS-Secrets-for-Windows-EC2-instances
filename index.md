@@ -119,7 +119,7 @@ Within the IAM Management Console, select the **Role** option.
 
 1. dsklafk;
 
-    ![image](
+    ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Select_existing_role.jpg)
 
 
 
