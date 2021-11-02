@@ -65,6 +65,8 @@ In this section, you create and configure a series of Secrets key/value pairs fo
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Secret_name.jpg)
     
+ 1. 
+    
 ## Setting Permissions to Secrets
 
 Create an IAM role for EC2 instance to read the secrets through the installation script to join the domain.
