@@ -81,7 +81,7 @@ In this section, you create and configure a series of Secrets key/value pairs fo
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Locate_ARN.jpg)
      
-## Setting Permissions to Secrets
+## Create a IAM Role
 
 Create an IAM role for EC2 instance to read the secrets through the installation script to join the domain.
 
@@ -110,7 +110,12 @@ Select the JSON tab, it will open in separate web browser tab. Click on tab JSON
 ```
 1. Select Option tag then **Next** to continue
 
-1. Review the setting to the IAM role, then select the **Create Policy** button to continue. 
+1. Review the setting to the IAM role, **Name** the Policy then select the **Create Policy** button to finish creating the role.
+
+## Assign a role to a IAM Policy
+
+
+
 
 ## Procure the EC2 Nvidia Instance
 
