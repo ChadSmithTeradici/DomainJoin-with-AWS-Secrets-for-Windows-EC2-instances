@@ -98,12 +98,14 @@ Create an IAM role for EC2 instance to read the secrets through the installation
             "Action": [
                 "secretsmanager:GetSecretValue"
             ],
-            "Resource": "arn:aws:secretsmanager:us-east-1:215538436894:secret:MySecret-u7eM2x",
+            "Resource": "arn:aws:secretsmanager:us-west-2:455311239824:secret:Windows/ServiceAccounts/DomainJoin-8KUbyW",
             "Effect": "Allow"
         }    
     ]
 }
 ```
+
+
 
 ## Procure the EC2 Nvidia Instance
 
