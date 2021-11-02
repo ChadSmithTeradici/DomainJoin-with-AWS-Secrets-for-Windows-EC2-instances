@@ -43,6 +43,8 @@ In this section, you set up some basic resources that the tutorial depends on.
 
 ## Setting Permissions to Secrets
 
+Create an IAM role for EC2 instance to read the secrets through the installation script to join the domain.
+
 
 ## Creation of AWS Secrets
 
