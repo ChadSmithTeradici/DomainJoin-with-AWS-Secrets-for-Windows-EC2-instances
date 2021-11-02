@@ -69,9 +69,15 @@ In this section, you create and configure a series of Secrets key/value pairs fo
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/StoreNewSecret.jpg)
     
- 1. Confirm the setting for the new Secrets page, then **Storet** to finish the creation of secrets.
+ 1. Confirm the setting for the new Secrets page, then **Store** to finish the creation of secrets.
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/ConfirmSecrets.jpg)
+    
+ 1. Once the Secret has been successfully been created, you need to find its assoicated ARN. **Select** the newly created secret and **double-click** on its link.
+
+    ![image] 
+
+    
  
     
 ## Setting Permissions to Secrets
