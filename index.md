@@ -12,7 +12,7 @@ Chad Smith | Technical Alliance Architect at Teradici | HP
 
 Credit to http://beta.awsdocs.com/ for baseline documents, this guide alters scripts, add additonal secrects and tightens access serects. 
 
-This script was designed to run on a freshly deployed Windows EC2 instance. Its function is to make a request to the AWS Secrets Manager to get the proper Active Directory Service Account credentials of a user that has delegated control to perform domain join operations. This negates the necessity of having hard coded username and password values sitting in the unattend.xml or the accompanying windows domain join powerShell script saved within the base AMI. The script performs the following actions:
+This script is designed to run on a freshly deployed Windows EC2 instance. Its function is to make a request to the AWS Secrets Manager to get the proper Active Directory Service Account credentials of a user that has delegated control to perform domain join operations. This negates the necessity of having hard coded username and password values sitting in the unattend.xml or the accompanying windows domain join powerShell script saved within the base AMI. The script performs the following actions:
 
 
 ## Objectives
