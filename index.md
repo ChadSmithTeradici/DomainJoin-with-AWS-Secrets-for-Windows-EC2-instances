@@ -82,7 +82,8 @@ Go to IAM -> Roles -> Create Role. Choose EC2 and click Next: Permissions. Then 
                 "Effect": "Allow"
          }    
         ]
-}  
+    }  
+
 
 ## Procure the EC2 Nvidia Instance
 
