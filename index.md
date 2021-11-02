@@ -90,19 +90,18 @@ Create an IAM role for EC2 instance to read the secrets through the installation
 
 3. Then click **Create Policy**, it will open in separate web browser tab. Click on tab JSON and paste the following text. Also add in the **ARN** for the **Secrets** captured in the previous step.
 
-     {
-        "Version": "2012-10-17",
-        "Statement": [
-             {
-                "Action": [
-                    "secretsmanager:GetSecretValue"
-                 ],
-                "Resource": "arn:aws:secretsmanager:us-east-1:215538436894:secret:MySecret-u7eM2x",
-                "Effect": "Allow"
-              }    
-         ]
-     }
-    
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "secretsmanager:GetSecretValue"
+            ],
+            "Resource": "arn:aws:secretsmanager:us-east-1:215538436894:secret:MySecret-u7eM2x",
+            "Effect": "Allow"
+        }    
+    ]
+}
 
 ## Procure the EC2 Nvidia Instance
 
