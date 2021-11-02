@@ -75,8 +75,9 @@ In this section, you create and configure a series of Secrets key/value pairs fo
     
  1. Once the Secret has been successfully been created, you need to find its assoicated ARN. **Select** the newly created secret and **double-click** on its link.
 
-    ![image] 
-
+    ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/List_Secrets.jpg)    
+ 
+1. kfslafk
     
  
     
