@@ -73,11 +73,13 @@ In this section, you create and configure a series of Secrets key/value pairs fo
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/ConfirmSecrets.jpg)
     
- 1. Once the Secret has been successfully been created, you need to find its assoicated ARN. **Select** the newly created secret and **double-click** on its link.
+ 1. Once the Secret has been successfully been created, you need to find its assoicated ARN. **Select** the newly created secret and **double-click** Secret Name.
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/List_Secrets.jpg)    
  
-1. kfslafk
+1. Once, In the **Secret Details** page, locate the ARN section and **copy** the associated ARN to later use in the IAM role creation. 
+
+    ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Locate_ARN.jpg)
     
  
     
