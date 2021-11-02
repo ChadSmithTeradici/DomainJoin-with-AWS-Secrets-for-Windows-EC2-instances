@@ -92,9 +92,16 @@ Create an IAM role for EC2 instance to read the secrets through the installation
 
 ```
 {
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "secretsmanager:GetSecretValue"
+            ],
+            "Resource": "arn:aws:secretsmanager:us-east-1:215538436894:secret:MySecret-u7eM2x",
+            "Effect": "Allow"
+        }    
+    ]
 }
 ```
 
