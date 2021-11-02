@@ -89,11 +89,11 @@ Create an IAM role for EC2 instance to read the secrets through the installation
 1. Go to IAM -> Roles -> Create Role. Choose EC2 and click Next: Permissions. 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Create_role.jpg)
     
-1. Select the **Create Policy** button
+1. Select the **Create Role** button
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Create_Policy_Button.jpg)
     
-Select the JSON tab, it will open in separate web browser tab. Click on tab JSON and paste the following text. Also add in the **ARN** for the **Secrets** captured in the previous step.
+Select the JSON tab, it will open in separate web browser tab. Click on tab JSON and paste the following text. Also add in the **ARN** for the **Secrets** captured in the previous step when creating the secret.
 
 ```
 {
@@ -113,7 +113,13 @@ Select the JSON tab, it will open in separate web browser tab. Click on tab JSON
 
 1. Review the setting to the IAM role, **Name** the Policy then select the **Create Policy** button to finish creating the role.
 
-## Assign a role to a IAM Policy
+## Assign a policy to a IAM Role
+
+Within the IAM Management Console, select the **Role** option. 
+
+1. dsklafk;
+
+    ![image](
 
 
 
