@@ -90,7 +90,7 @@ Create an IAM role for EC2 instance to read the secrets through the installation
     
 1. Select the **Create Policy** button
 
-    ![image](
+    ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Create_Policy_Button.jpg)
     
 Select the JSON tab, it will open in separate web browser tab. Click on tab JSON and paste the following text. Also add in the **ARN** for the **Secrets** captured in the previous step.
 
@@ -108,8 +108,9 @@ Select the JSON tab, it will open in separate web browser tab. Click on tab JSON
     ]
 }
 ```
+1. Select Option tag then **Next** to continue
 
-
+1. Review the setting to the IAM role, then select the **Create Policy** button to continue. 
 
 ## Procure the EC2 Nvidia Instance
 
