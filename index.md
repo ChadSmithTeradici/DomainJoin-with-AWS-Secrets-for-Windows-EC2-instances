@@ -78,7 +78,7 @@ In this section, you create and configure a series of Secrets key/value pairs fo
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/List_Secrets.jpg)    
  
-1. Once, In the **Secret Details** page, locate the ARN section and **copy** the associated ARN to later use in the IAM role creation. 
+1. Once, In the **Secret Details** page, locate the ARN section and **copy** the associated ARN to later use in the IAM policy creation. 
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Locate_ARN.jpg)
      
