@@ -115,11 +115,25 @@ Select the JSON tab, it will open in separate web browser tab. Click on tab JSON
 
 ## Assign a policy to a IAM Role
 
-Within the IAM Management Console, select the **Role** option. 
+Within the IAM Management Console, select the **Create role** option. 
 
-1. dsklafk;
+1. In the IAM Role section select **Create** Role button.
+
+1. Just like in the Role creation section, you will select the **AWS Service** and **EC2** under common use case.
+
+    ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Create_role.jpg)
+
+1. Search for the already created Role name, that was set in the previous step. *(Example: ec2_domain_join_script)*
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Select_existing_role.jpg)
+    
+1. Next add optional Tags, Select **Next** to continue.
+
+1. Finally, provide a name to the Role. 
+
+    ![image](
+    
+    
 
 
 
