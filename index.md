@@ -143,7 +143,8 @@ In this section, you procure will procure a EC2 instance through the EC2 Dashboa
 
 1. On the **Choose Instance Type** page, chose a instance type and choose **Next: Configure Instance Details**.
 
-1. On the **Configure Instance Details** page, at a minimum fill in **Networking/Subnet/Auto-Assign Public-IP** based on desired Network topology. Take remaining configuration details based your requirements, until you reach the **IAM Roles**, then select the name of the IAM role previous created.
+1. On the **Configure Instance Details** page, at a minimum fill in **Networking/Subnet/Auto-Assign Public-IP** based on desired Network topology. Take remaining configuration details based your requirements, until you reach the **IAM Roles**, then select the name of the IAM role previous created. 
+*(Example: Domain_join_script)*
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/IAM_Role_Domain_Join.jpg)
 
