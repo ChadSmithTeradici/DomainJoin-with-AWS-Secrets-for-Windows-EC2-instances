@@ -226,7 +226,10 @@ If you used the same naming conventations throughout this deployment guide, then
     **Note:** When the domain join script runs, it will AD join the instace using its instance ID as the AD computer name. Logging into the Active Directory Server     and looking for a correlation between instance ID and computer name ensures that the script has successfully run. 
     
 ## (Option 2:) Add a AD join script before making a "golden image" (AMI) of the instance.
-dsafalf
+1. RDP into the instance to install software and prepare the instance to a golden image. This will not be a exhaustive explanation of the processes, I advise consulting this [guide](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_EBSbacked_WinAMI.html) on all the best practices to create an image.
+
+1. 
+
 ```
 $fileToCheck = "c:\Teradici\Provision.txt"
 if (Test-Path $fileToCheck -PathType leaf)
@@ -266,8 +269,7 @@ else
   }
   ```
 
-
-
+hsjkfkjasfh
 
 ## Revoke access to secrets after domain join
 
