@@ -135,7 +135,7 @@ Within the IAM Management Console, select the **Create role** option.
 
 ## Procure a EC2 Instance
 
-In this section, you procure will procure a EC2 instance through the EC2 Dashboard. This section isn't an exhaustive explanation instead rather focusing on domain joing script. For more details directions on the actual installation process, refer to [EC2 Nvidia](https://github.com/ChadSmithTeradici/Teradici-PCoIP-Ultra-deployment-script-for-AWS-NVIDIA-EC2-instances) and [EC2 standard](https://github.com/ChadSmithTeradici/Teradici-PCoIP-Standard-deployment-script-for-AWS-EC2-instances) installation guides
+In this section, you procure will procure a EC2 instance through the EC2 Dashboard. This section isn't an exhaustive explanation instead rather focusing on domain join script portion. For more details directions on the actual installation process, refer to [EC2 Nvidia](https://github.com/ChadSmithTeradici/Teradici-PCoIP-Ultra-deployment-script-for-AWS-NVIDIA-EC2-instances) and [EC2 standard](https://github.com/ChadSmithTeradici/Teradici-PCoIP-Standard-deployment-script-for-AWS-EC2-instances) installation guides.
 
 1.  Launch a EC2 instance, On the [EC2 Dashboard](https://console.aws.amazon.com/ec2), choose **Launch Instance*
 
@@ -148,7 +148,7 @@ In this section, you procure will procure a EC2 instance through the EC2 Dashboa
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/IAM_Role_Domain_Join.jpg)
 
-    Scroll down to the **User data** field in the Advanced Details section and copy the script below and modify accordingly
+    Scroll down to the **User data** field in the Advanced Details section and copy the script below and modify accordingly.
 
    ![image](https://github.com/ChadSmithTeradici/Teradici-PCoIP-deployment_script-for-AWS-NVIDIA-Instances/blob/main/images/User_Data_Field.jpg)   
  
@@ -180,7 +180,7 @@ In this section, you procure will procure a EC2 instance through the EC2 Dashboa
     </powershell>
     ```
 
-If you used the same naming conventations throughout this deployment guide, then the only section you have to personalize is the name of your domain and its       assoicated tld. If you deviated the name of the secrets names or any other variables, then you should make the changes above as well.   
+If you used the same naming conventations throughout this deployment guide, then the only section you have to personalize is the name of your domain and its       assoicated tld. If you deviated the name of the secrets names or any other variables, then you should make the changes above as well  
     
 + Change to your domain name *Example: teradici* 
 + Chanage to your tld name *Examaple: dom*
