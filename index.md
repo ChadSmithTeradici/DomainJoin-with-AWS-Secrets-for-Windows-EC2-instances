@@ -281,7 +281,7 @@ Its best to remove access after domain join and can be either done at a instance
     
 ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Revoke_IAM_Role.jpg)
     
-**Option 2:** Remove the IAM Role on a per-instance basis through the EC2 Dashboard
+**Option 2:** Remove the IAM Role on a per-instance basis through the EC2 Dashboard.
 
 ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Remove_IAM_Role_Instance.jpg)
 
