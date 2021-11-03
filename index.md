@@ -223,7 +223,11 @@ If you used the same naming conventations throughout this deployment guide, then
     
     Then, choose **Review** and **Launch**.
     
+    **Note:** When the domain join script runs, it will AD join the instace using its instance ID as the AD computer name. Logging into the Active Directory Server     and looking a correlation between instance ID and computer name, ensures that the script had successfully run. 
+    
 ## Revoke access to secrets after domain join
+
+It is stronly recommended to remove access to the AWS secrets after you have succefully leveraged the domain join script. A savy end-user could theoretically access the AWS secrets while logged into an instance that will has access the IAM role assigned and if they knew the Secrets Name to call. Its best to remove access after domain join and can be either done at a instance or role level.  
 
 **Option 1:** Apply an explicite Deny to the IAM role that overrides the IAM Policy orginally created**
     
