@@ -131,7 +131,7 @@ Within the IAM Management Console, select the **Create role** option.
 
 1. Finally, provide a name to the Role. 
 
-    ![image](
+    ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Finish_role.jpg)
     
     
 
