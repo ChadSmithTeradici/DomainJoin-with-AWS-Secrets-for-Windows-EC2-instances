@@ -154,8 +154,8 @@ Scroll down to the ** **User data** field in the Advanced Details section.
  
  1. Based on your EC2 Instance desired OS you will need either a Windows Powershell script (or) Centos Bash script. These scripts are maintained and updated quartly by Teradici and are avaible on the [Teradici GitHub repo](https://github.com/teradici)
     ```
-    $domain_name = "**teradici**".ToUpper() <--change to your domain name +Example: teradici+
-    $domain_tld = "**dom**"                 <-- change to your tld name +Examaple: dom+
+    $domain_name = "teradici".ToUpper() <--change to your domain name +Example: teradici+
+    $domain_tld = "dom"                 <-- change to your tld name +Examaple: dom+
     ```
  
     + For **[Windows 2019]** (works with other windows flavors) **Copy** all the contents of this script and **Paste** it into the **User data** field
