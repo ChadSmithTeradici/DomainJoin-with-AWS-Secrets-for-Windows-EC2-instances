@@ -133,7 +133,7 @@ Within the IAM Management Console, select the **Create role** option.
    ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Finish_role.jpg) 
   
 
-## Procure a EC2 Instance and assign role
+## (Option 1:) Procure a EC2 Instance, assign role and use User Defined Script
 
 In this section, you procure will procure a EC2 instance through the EC2 Dashboard. This section isn't an exhaustive explanation instead rather focusing on domain join script portion. For more details directions on the actual installation process, refer to [EC2 Nvidia](https://github.com/ChadSmithTeradici/Teradici-PCoIP-Ultra-deployment-script-for-AWS-NVIDIA-EC2-instances) and [EC2 standard](https://github.com/ChadSmithTeradici/Teradici-PCoIP-Standard-deployment-script-for-AWS-EC2-instances) installation guides.
 
@@ -225,6 +225,11 @@ If you used the same naming conventations throughout this deployment guide, then
     
     **Note:** When the domain join script runs, it will AD join the instace using its instance ID as the AD computer name. Logging into the Active Directory Server     and looking for a correlation between instance ID and computer name ensures that the script has successfully run. 
     
+## (Option 2:) Add a AD join script before making a "golden image" (AMI) of the instance.
+
+
+
+
 ## Revoke access to secrets after domain join
 
 It is stronly recommended to remove access to the AWS secrets after you have succefully leveraged the domain join script. A savy end-user could theoretically access the AWS secrets while logged into an instance that still has granted access to the IAM role and they where aware ofthe Secrets Name to call. 
