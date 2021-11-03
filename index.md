@@ -230,3 +230,7 @@ If you used the same naming conventations throughout this deployment guide, then
 ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Revoke_IAM_Role.jpg)
     
 **Option 2:** Remove the IAM Role on a per-instance basis through the EC2 Dashboard
+
+![image](
+
+![image](
