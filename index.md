@@ -82,14 +82,13 @@ In this section, you create and configure a series of Secrets key/value pairs fo
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Locate_ARN.jpg)
      
-## Create a IAM Role
+## Create a IAM Policy
 
 Create an IAM role for EC2 instance to read the secrets through the installation script to join the domain.
 
-1. Go to IAM -> Roles -> Create Role. Choose EC2 and click Next: Permissions. 
-    ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Create_role.jpg)
+1. Go to IAM -> Policy -> Create Policy. 
     
-1. Select the **Create Role** button
+1. Select the **Create Policy** button
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Create_Policy_Button.jpg)
     
@@ -113,29 +112,26 @@ Select the JSON tab, it will open in separate web browser tab. Click on tab JSON
 
 1. Review the setting to the IAM role, **Name** the Policy then select the **Create Policy** button to finish creating the role.
 
-## Assign a role to a IAM policy
+## Assign a policy to a IAM Role
 
 Within the IAM Management Console, select the **Create role** option. 
 
 1. In the IAM Role section select **Create** Role button.
 
-1. Just like in the Role creation section, you will select the **AWS Service** and **EC2** under common use case.
+1. In the Role creation section, you will select the **AWS Service** and **EC2** under common use case.
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Create_role.jpg)
 
-1. Search for the already created Role name, that was set in the previous step. *(Example: ec2_domain_join_script)*
+1. Search for the already created Policy name, that was set in the previous step. *(Example: ec2_domain_join_script)*
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Select_existing_role.jpg)
     
 1. Next add optional Tags, Select **Next** to continue.
 
-1. Finally, provide a name to the Policy, review the policy and ensure the previous role is assigned. 
+1. Finally, provide a name to the Role, review the Role and ensure the previous policy is assigned. 
 
-    ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Finish_role.jpg)
-    
-   
-
-
+    ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Finish_role.jpg) 
+  
 
 ## Procure the EC2 Nvidia Instance
 
