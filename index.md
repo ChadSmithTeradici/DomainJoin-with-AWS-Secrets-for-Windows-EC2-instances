@@ -223,7 +223,7 @@ If you used the same naming conventations throughout this deployment guide, then
     
     Then, choose **Review** and **Launch**.
     
-    **Note:** When the domain join script runs, it will AD join the instace using its instance ID as the AD computer name. Logging into the Active Directory Server     and looking a correlation between instance ID and computer name, ensures that the script had successfully run. 
+    **Note:** When the domain join script runs, it will AD join the instace using its instance ID as the AD computer name. Logging into the Active Directory Server     and looking for a correlation between instance ID and computer name ensures that the script has successfully run. 
     
 ## Revoke access to secrets after domain join
 
