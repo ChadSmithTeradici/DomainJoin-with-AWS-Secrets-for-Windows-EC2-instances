@@ -191,11 +191,11 @@ If you used the same naming conventations throughout this deployment guide, then
     ```
   For the remaining configuration details, make any selections you prefer. Then, choose **Next: Add Storage**.
 
-1. On the **Add Storage** page, choose the Size (GiB) cell and increase the volume based on your requirements. Then, choose **Next: Add Tags**.
+5. On the **Add Storage** page, choose the Size (GiB) cell and increase the volume based on your requirements. Then, choose **Next: Add Tags**.
 
-1. On the **Add Tags page**, optionally add any Key:Value tags to your instance. Then, choose **Next: Configure Security Group**.
+6. On the **Add Tags page**, optionally add any Key:Value tags to your instance. Then, choose **Next: Configure Security Group**.
 
-1. On the Configure Security Group page, make the following selections:
+7. On the Configure Security Group page, make the following selections:
 
     + For **Assign a security group**, choose **Create a new security group**.
     + For **Security group name**, type a descriptive name, such as *pcoip ssh rdp*.
