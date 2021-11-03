@@ -113,7 +113,7 @@ Select the JSON tab, it will open in separate web browser tab. Click on tab JSON
 
 1. Review the setting to the IAM role, **Name** the Policy then select the **Create Policy** button to finish creating the role.
 
-## Assign a policy to a IAM Role
+## Assign a role to a IAM policy
 
 Within the IAM Management Console, select the **Create role** option. 
 
@@ -129,7 +129,7 @@ Within the IAM Management Console, select the **Create role** option.
     
 1. Next add optional Tags, Select **Next** to continue.
 
-1. Finally, provide a name to the Role. 
+1. Finally, provide a name to the Policy, review the policy and ensure the previous role is assigned. 
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Finish_role.jpg)
     
