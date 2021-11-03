@@ -189,7 +189,7 @@ If you used the same naming conventations throughout this deployment guide, then
     $domain_name = "teradici".ToUpper() 
     $domain_tld = "dom"                
     ```
-  **Note, Active Directory domain server (or) AD service just be resolvable and accessable to the local subnet, ensure all ports are available as well.**
+  **Note, AD server( or) service is resolvable and accessable to the local subnet where instance resides, ensure all required ports are available.**
   
   For the remaining configuration details, make any selections you prefer. Then, choose **Next: Add Storage**.
 
