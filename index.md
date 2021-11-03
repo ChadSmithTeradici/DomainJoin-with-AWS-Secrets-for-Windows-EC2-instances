@@ -226,6 +226,45 @@ If you used the same naming conventations throughout this deployment guide, then
     **Note:** When the domain join script runs, it will AD join the instace using its instance ID as the AD computer name. Logging into the Active Directory Server     and looking for a correlation between instance ID and computer name ensures that the script has successfully run. 
     
 ## (Option 2:) Add a AD join script before making a "golden image" (AMI) of the instance.
+dsafalf
+```
+$fileToCheck = "c:\Teradici\Provision.txt"
+if (Test-Path $fileToCheck -PathType leaf)
+  {"Script was previously Run -- Stopping--"
+  exit
+  }
+
+else
+  {"First time running the script"
+  New-Item -ItemType "directory" -Path "c:\Teradici"
+  New-Item -ItemType "file" -Path "c:\Teradici\Provision.txt"
+  hostname | Out-File -FilePath "c:\Teradici\Provision.txt"
+  Get-Content -Path "c:\Teradici\Provision.txt"
+  # Domain name and the tld. In this example the domain is starfleet.aws
+  $domain_name = "ibperf".ToUpper()
+  $domain_tld = "dom"
+  $secrets_manager_secret_id = "Windows/ServiceAccounts/DomainJoin"
+
+  # Make a request to the secret manager
+  $secret_manager = Get-SECSecretValue -SecretId $secrets_manager_secret_id
+
+  # Parse the response and convert the Secret String JSON into an object
+  $secret = $secret_manager.SecretString | ConvertFrom-Json
+
+  # Construct the domain credentials
+  $username = $domain_name.ToUpper() + "\" + $secret.ServiceAccount
+  $password = $secret.Password | ConvertTo-SecureString -AsPlainText -Force
+
+  # Set PS credentials
+  $credential = New-Object System.Management.Automation.PSCredential($username,$password)
+
+  # Get the Instance ID from the metadata store, we will use this as our computer name during domain registration.
+  $instanceID = [System.Net.Dns]::GetHostName()
+
+  # Perform the domain join
+  Add-Computer -DomainName "$domain_name.$domain_tld" -Credential $credential -Passthru -Verbose -Force -Restart
+  }
+  ```
 
 
 
