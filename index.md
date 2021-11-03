@@ -82,7 +82,7 @@ In this section, you create and configure a series of Secrets key/value pairs fo
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Locate_ARN.jpg)
      
-## Create a IAM Policy
+## Assign a IAM Policy for secrets
 
 Create an IAM role for EC2 instance to read the secrets through the installation script to join the domain.
 
@@ -112,7 +112,7 @@ Select the **JSON** tab, it will open in separate web browser tab. Click on tab 
 
 1. Review the setting to the IAM role, **Name** the Policy then select the **Create Policy** button to finish creating the role.
 
-## Assign a policy to a IAM Role
+## Creation of a IAM Role to access policy
 
 Within the IAM Management Console, select the **Create role** option. 
 
@@ -133,7 +133,7 @@ Within the IAM Management Console, select the **Create role** option.
    ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Finish_role.jpg) 
   
 
-## Procure a EC2 Instance
+## Procure a EC2 Instance and assign role
 
 In this section, you procure will procure a EC2 instance through the EC2 Dashboard. This section isn't an exhaustive explanation instead rather focusing on domain join script portion. For more details directions on the actual installation process, refer to [EC2 Nvidia](https://github.com/ChadSmithTeradici/Teradici-PCoIP-Ultra-deployment-script-for-AWS-NVIDIA-EC2-instances) and [EC2 standard](https://github.com/ChadSmithTeradici/Teradici-PCoIP-Standard-deployment-script-for-AWS-EC2-instances) installation guides.
 
@@ -189,6 +189,8 @@ If you used the same naming conventations throughout this deployment guide, then
     $domain_name = "teradici".ToUpper() 
     $domain_tld = "dom"                
     ```
+  **Note, Active Directory domain server (or) AD service just be resolvable and accessable to the local subnet, ensure all ports are available as well.**
+  
   For the remaining configuration details, make any selections you prefer. Then, choose **Next: Add Storage**.
 
 5. On the **Add Storage** page, choose the Size (GiB) cell and increase the volume based on your requirements. Then, choose **Next: Add Tags**.
