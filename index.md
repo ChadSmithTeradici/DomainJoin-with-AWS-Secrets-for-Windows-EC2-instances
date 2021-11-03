@@ -130,7 +130,7 @@ Within the IAM Management Console, select the **Create role** option.
 
 1. Finally, provide a name to the Role, review the Role and ensure the previous policy is assigned. 
 
-    ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Finish_role.jpg) 
+   ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Finish_role.jpg) 
   
 
 ## Procure the EC2 Nvidia Instance
