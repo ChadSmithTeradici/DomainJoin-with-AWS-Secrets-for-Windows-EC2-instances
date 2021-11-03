@@ -224,8 +224,9 @@ If you used the same naming conventations throughout this deployment guide, then
     Then, choose **Review** and **Launch**.
     
 ## Revoke access to secrets after domain join
-dsjLDlkds
+
+**Option 1:** Apply an explicite Deny to the IAM role that overrides the IAM Policy orginally created**
     
 ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Revoke_IAM_Role.jpg)
     
-kkdfsalk
+**Option 2:** Remove the IAM Role on a per-instance basis through the EC2 Dashboard
