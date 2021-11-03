@@ -228,7 +228,13 @@ If you used the same naming conventations throughout this deployment guide, then
 ## (Option 2:) Add a AD join script before making a "golden image" (AMI) of the instance.
 1. RDP into the instance to install software and prepare the instance to a golden image. This will not be a exhaustive explanation of the processes, I advise consulting this [guide](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_EBSbacked_WinAMI.html) on all the best practices to create an image.
 
-1. 
+1. Run **gpedit.msc** in a command line on the windows instance
+
+1. Once in the local machine group policy editor, navigate too
+*Computer Configuration > Windows Settings > Scripts (Startup/Shutdown)*
+
+![image](
+
 
 ```
 $fileToCheck = "c:\Teradici\Provision.txt"
