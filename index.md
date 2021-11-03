@@ -230,12 +230,19 @@ If you used the same naming conventations throughout this deployment guide, then
 It is stronly recommended to remove access to the AWS secrets after you have succefully leveraged the domain join script. A savy end-user could theoretically access the AWS secrets while logged into an instance that still has granted access to the IAM role and they are aware ofthe Secrets Name to call in a function.  
 
 **Option 1:** Apply an explicite Deny to the IAM role that overrides the IAM Policy orginally created**
+1. From the [IAM Dashboard](https://console.aws.amazon.com/iam), select the **Role** option in the left pane. 
+
+1. Search for the name of the Role that was previously created. *(Example: Domain_Join_script)*
+
+1. Select the **Revoke** tab with the Role properties. 
     
 ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Revoke_IAM_Role.jpg)
+
+**Note** An explicit DENY policy will override any ALLOW policies assinged to the same role. If you wanted to re-run the Domain Join script again and access the secrets, you would have to remove the DENY policy. 
     
 **Option 2:** Remove the IAM Role on a per-instance basis through the EC2 Dashboard.
 
-1. From [EC2 Dashboard](https://console.aws.amazon.com/ec2, select the instances by **checking the box** left of the instances that just have been added to AD.
+1. From [EC2 Dashboard](https://console.aws.amazon.com/ec2), select the instances by **checking the box** left of the instances that just have been added to AD.
 
 1. Select the **Actions** button, the **Security**, **Modify IAM Role**
 
