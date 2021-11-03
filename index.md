@@ -153,8 +153,36 @@ Scroll down to the ** **User data** field in the Advanced Details section.
    ![image](https://github.com/ChadSmithTeradici/Teradici-PCoIP-deployment_script-for-AWS-NVIDIA-Instances/blob/main/images/User_Data_Field.jpg)   
  
  1. Based on your EC2 Instance desired OS you will need either a Windows Powershell script (or) Centos Bash script. These scripts are maintained and updated quartly by Teradici and are avaible on the [Teradici GitHub repo](https://github.com/teradici)
-    + Change to your domain name +Example: teradici+
-    + Chanage to your tld name +Examaple: dom+
+ ```
+ <powershell>
+# Domain name and the tld. In this example would be teradici.dom
+$domain_name = "teradici".ToUpper()
+$domain_tld = "dom"
+$secrets_manager_secret_id = "Windows/ServiceAccounts/DomainJoin"
+
+# Make a request to the secret manager
+$secret_manager = Get-SECSecretValue -SecretId $secrets_manager_secret_id
+
+# Parse the response and convert the Secret String JSON into an object
+$secret = $secret_manager.SecretString | ConvertFrom-Json
+
+# Construct the domain credentials
+$username = $domain_name.ToUpper() + "\" + $secret.ServiceAccount
+$password = $secret.Password | ConvertTo-SecureString -AsPlainText -Force
+
+# Set PS credentials
+$credential = New-Object System.Management.Automation.PSCredential($username,$password)
+
+# Get the Instance ID from the metadata store, we will use this as our computer name during domain registration.
+$instanceID = [System.Net.Dns]::GetHostName()
+
+# Perform the domain join
+Add-Computer -DomainName "$domain_name.$domain_tld" -Credential $credential -Passthru -Verbose -Force -Restart
+</powershell>
+```
+
+    + Change to your domain name *Example: teradici*
+    + Chanage to your tld name *Examaple: dom*
     ```
     $domain_name = "teradici".ToUpper() 
     $domain_tld = "dom"                
