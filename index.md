@@ -224,8 +224,8 @@ If you used the same naming conventations throughout this deployment guide, then
     Then, choose **Review** and **Launch**.
     
 ## Revoke access to secrets after domain join
-    dsjLDlkds
+dsjLDlkds
     
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Revoke_IAM_Role.jpg)
     
-    kkdfsalk
+kkdfsalk
