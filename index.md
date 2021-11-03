@@ -92,7 +92,7 @@ Create an IAM role for EC2 instance to read the secrets through the installation
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Create_Policy_Button.jpg)
     
-Select the JSON tab, it will open in separate web browser tab. Click on tab JSON and paste the following text. Also add in the **ARN** for the **Secrets** captured in the previous step when creating the secret.
+Select the **JSON** tab, it will open in separate web browser tab. Click on tab JSON and paste the following text. Also add in the **ARN** for the **Secrets** captured in the previous step when creating the secret.
 
 ```
 {
