@@ -181,10 +181,10 @@ Add-Computer -DomainName "$domain_name.$domain_tld" -Credential $credential -Pas
 </powershell>
 ```
 
-    If you used the same naming conventations throughout this deployment guide, then the only section you have to personalize is the name of your domain and its       assoicated tld. If you deviated the name of the secrets names or any other variables, then you should make the changes above as well.   
+If you used the same naming conventations throughout this deployment guide, then the only section you have to personalize is the name of your domain and its       assoicated tld. If you deviated the name of the secrets names or any other variables, then you should make the changes above as well.   
     
-+ Change to your domain name *Example: teradici*
-+ Chanage to your tld name *Examaple: dom*
+    + Change to your domain name *Example: teradici*
+    + Chanage to your tld name *Examaple: dom*
     
     ```
     $domain_name = "teradici".ToUpper() 
