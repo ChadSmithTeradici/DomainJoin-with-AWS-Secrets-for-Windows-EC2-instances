@@ -20,7 +20,7 @@ This script is designed to run on a freshly deployed Windows EC2 instance. Its f
 + Create key/value pair in AWS Secrets
 + Create an IAM role/policy to lock down access to Secrets
 + Allocate a AWS EC2 instance from AWS Console.
-+ Drop in deployment script in User Defined (or) Windows local GPO
++ Drop in deployment script in User Defined area
 + Start EC2 instance, verify domain join.
 
 ## Costs
@@ -133,7 +133,7 @@ Within the IAM Management Console, select the **Create role** option.
    ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Finish_role.jpg) 
   
 
-## (Option 1:) Procure a EC2 Instance, assign role and use User Defined Script
+## Procure a EC2 Instance, assign role and use User Defined Script
 
 In this section, you procure will procure a EC2 instance through the EC2 Dashboard. This section isn't an exhaustive explanation instead rather focusing on domain join script portion. For more details directions on the actual installation process, refer to [EC2 Nvidia](https://github.com/ChadSmithTeradici/Teradici-PCoIP-Ultra-deployment-script-for-AWS-NVIDIA-EC2-instances) and [EC2 standard](https://github.com/ChadSmithTeradici/Teradici-PCoIP-Standard-deployment-script-for-AWS-EC2-instances) installation guides.
 
@@ -225,72 +225,21 @@ If you used the same naming conventations throughout this deployment guide, then
     
     **Note:** When the domain join script runs, it will AD join the instace using its instance ID as the AD computer name. Logging into the Active Directory Server     and looking for a correlation between instance ID and computer name ensures that the script has successfully run. 
     
-## (Option 2:) Add a AD join script before making a "golden image" (AMI) of the instance.
-1. RDP into the instance to install software and prepare the instance to a golden image. This will not be a exhaustive explanation of the processes, I advise consulting this [guide](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_EBSbacked_WinAMI.html) on all the best practices to create an image.
-
-1. Run **gpedit.msc** in a command line on the windows instance
-
-1. Once in the local machine group policy editor, navigate too
-*Computer Configuration > Windows Settings > Scripts (Startup/Shutdown)*
-
-![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/GPPOLICY%20START-UP%201st%20part.jpg)
-
-1. Select the Startup Option, Select the **PowerShell Scripts** TAB, then in Startup Properties select **Add** button.
-
-![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/GPPOLICY%20START-UP%202nd%20part.jpg)
-
-```
-$fileToCheck = "c:\Teradici\Provision.txt"
-if (Test-Path $fileToCheck -PathType leaf)
-  {"Script was previously Run -- Stopping--"
-  exit
-  }
-
-else
-  {"First time running the script"
-  New-Item -ItemType "directory" -Path "c:\Teradici"
-  New-Item -ItemType "file" -Path "c:\Teradici\Provision.txt"
-  hostname | Out-File -FilePath "c:\Teradici\Provision.txt"
-  Get-Content -Path "c:\Teradici\Provision.txt"
-  # Domain name and the tld. In this example the domain is starfleet.aws
-  $domain_name = "ibperf".ToUpper()
-  $domain_tld = "dom"
-  $secrets_manager_secret_id = "Windows/ServiceAccounts/DomainJoin"
-
-  # Make a request to the secret manager
-  $secret_manager = Get-SECSecretValue -SecretId $secrets_manager_secret_id
-
-  # Parse the response and convert the Secret String JSON into an object
-  $secret = $secret_manager.SecretString | ConvertFrom-Json
-
-  # Construct the domain credentials
-  $username = $domain_name.ToUpper() + "\" + $secret.ServiceAccount
-  $password = $secret.Password | ConvertTo-SecureString -AsPlainText -Force
-
-  # Set PS credentials
-  $credential = New-Object System.Management.Automation.PSCredential($username,$password)
-
-  # Get the Instance ID from the metadata store, we will use this as our computer name during domain registration.
-  $instanceID = [System.Net.Dns]::GetHostName()
-
-  # Perform the domain join
-  Add-Computer -DomainName "$domain_name.$domain_tld" -Credential $credential -Passthru -Verbose -Force -Restart
-  }
-  ```
-
-hsjkfkjasfh
-
 ## Revoke access to secrets after domain join
 
-It is stronly recommended to remove access to the AWS secrets after you have succefully leveraged the domain join script. A savy end-user could theoretically access the AWS secrets while logged into an instance that still has granted access to the IAM role and they where aware ofthe Secrets Name to call. 
-
-Its best to remove access after domain join and can be either done at a instance or role level.  
+It is stronly recommended to remove access to the AWS secrets after you have succefully leveraged the domain join script. A savy end-user could theoretically access the AWS secrets while logged into an instance that still has granted access to the IAM role and they are aware ofthe Secrets Name to call in a function.  
 
 **Option 1:** Apply an explicite Deny to the IAM role that overrides the IAM Policy orginally created**
     
 ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Revoke_IAM_Role.jpg)
     
 **Option 2:** Remove the IAM Role on a per-instance basis through the EC2 Dashboard.
+
+1. From [EC2 Dashboard](https://console.aws.amazon.com/ec2, select the instances by **checking the box** left of the instances that just have been added to AD.
+
+1. Select the **Actions** button, the **Security**, **Modify IAM Role**
+
+1. In the Modify IAM Role window, select the **No IAM Role** option to remove access to secrets. 
 
 ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Remove_IAM_Role_Instance.jpg)
 
