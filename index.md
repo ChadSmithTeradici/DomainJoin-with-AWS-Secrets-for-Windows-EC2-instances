@@ -233,8 +233,11 @@ If you used the same naming conventations throughout this deployment guide, then
 1. Once in the local machine group policy editor, navigate too
 *Computer Configuration > Windows Settings > Scripts (Startup/Shutdown)*
 
-![image](
+![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/GPPOLICY%20START-UP%20Script%20PCoIP.tiff)
 
+1. Select the Startup Option, Select the **PowerShell Scripts** TAB, then in Startup Properties select **Add** button.
+
+![image](
 
 ```
 $fileToCheck = "c:\Teradici\Provision.txt"
