@@ -181,27 +181,15 @@ Add-Computer -DomainName "$domain_name.$domain_tld" -Credential $credential -Pas
 </powershell>
 ```
 
+If you used the same naming conventations throughout this deployment guide, then the only section you have to personalize is the name of your domain and its assoicated tld. If you deviated the name of the secrets names or any other variables, then you should make the changes above as well.   
+    
     + Change to your domain name *Example: teradici*
     + Chanage to your tld name *Examaple: dom*
     ```
     $domain_name = "teradici".ToUpper() 
     $domain_tld = "dom"                
     ```
- 
-    + For **[Windows 2019]** (works with other windows flavors) **Copy** all the contents of this script and **Paste** it into the **User data** field
-    
-      You will need to enter your **Teradici registration code** into the script after it is pasted in the User data field. For Windows that field is on line 6. Also there is an (optional)set local administrator password as well on line 7.
-    
-        Registration codes look like this: ABCDEFGH12@AB12-C345-D67E-89FG
-    
-    + For **[CentOS 7]**  **Copy** all the contents of this script and **Paste** it into the **User data** field.
-    
-      You will need to enter your **Teradici registration code** into the script after it is pasted in the User data field. For CentOS that field is on line 6. Also there is an (optional)to create a user and password combination to establishment of PCoIP session on line 7.
-
-        Registration codes look like this: ABCDEFGH12@AB12-C345-D67E-89FG
- 
- 
-    For the remaining configuration details, make any selections you prefer. Then, choose **Next: Add Storage**.
+  For the remaining configuration details, make any selections you prefer. Then, choose **Next: Add Storage**.
 
 1. On the **Add Storage** page, choose the Size (GiB) cell and increase the volume based on your requirements. Then, choose **Next: Add Tags**.
 
