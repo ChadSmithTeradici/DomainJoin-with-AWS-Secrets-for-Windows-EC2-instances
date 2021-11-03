@@ -222,5 +222,5 @@ If you used the same naming conventations throughout this deployment guide, then
     
     Then, choose **Review** and **Launch**.
     
-    ## Revoke access to secrets after instances join the domain
+    ## Revoke access to secrets after domain join
     
