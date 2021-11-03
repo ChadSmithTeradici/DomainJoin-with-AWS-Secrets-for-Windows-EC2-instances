@@ -148,38 +148,37 @@ In this section, you procure will procure a EC2 instance through the EC2 Dashboa
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/IAM_Role_Domain_Join.jpg)
 
-    Scroll down to the ** **User data** field in the Advanced Details section.
+    Scroll down to the **User data** field in the Advanced Details section and copy the script below and modify accordingly
 
    ![image](https://github.com/ChadSmithTeradici/Teradici-PCoIP-deployment_script-for-AWS-NVIDIA-Instances/blob/main/images/User_Data_Field.jpg)   
  
- 1. Based on your EC2 Instance desired OS you will need either a Windows Powershell script (or) Centos Bash script. These scripts are maintained and updated quartly by Teradici and are avaible on the [Teradici GitHub repo](https://github.com/teradici)
- ```
- <powershell>
-# Domain name and the tld. In this example would be teradici.dom
-$domain_name = "teradici".ToUpper()
-$domain_tld = "dom"
-$secrets_manager_secret_id = "Windows/ServiceAccounts/DomainJoin"
+    ```
+     <powershell>
+    # Domain name and the tld. In this example would be teradici.dom
+    $domain_name = "teradici".ToUpper()
+    $domain_tld = "dom"
+    $secrets_manager_secret_id = "Windows/ServiceAccounts/DomainJoin"
 
-# Make a request to the secret manager
-$secret_manager = Get-SECSecretValue -SecretId $secrets_manager_secret_id
+    # Make a request to the secret manager
+    $secret_manager = Get-SECSecretValue -SecretId $secrets_manager_secret_id
 
-# Parse the response and convert the Secret String JSON into an object
-$secret = $secret_manager.SecretString | ConvertFrom-Json
+    # Parse the response and convert the Secret String JSON into an object
+    $secret = $secret_manager.SecretString | ConvertFrom-Json
 
-# Construct the domain credentials
-$username = $domain_name.ToUpper() + "\" + $secret.ServiceAccount
-$password = $secret.Password | ConvertTo-SecureString -AsPlainText -Force
+    # Construct the domain credentials
+    $username = $domain_name.ToUpper() + "\" + $secret.ServiceAccount
+    $password = $secret.Password | ConvertTo-SecureString -AsPlainText -Force
 
-# Set PS credentials
-$credential = New-Object System.Management.Automation.PSCredential($username,$password)
+    # Set PS credentials
+    $credential = New-Object System.Management.Automation.PSCredential($username,$password)
 
-# Get the Instance ID from the metadata store, we will use this as our computer name during domain registration.
-$instanceID = [System.Net.Dns]::GetHostName()
+    # Get the Instance ID from the metadata store, we will use this as our computer name during domain registration.
+    $instanceID = [System.Net.Dns]::GetHostName()
 
-# Perform the domain join
-Add-Computer -DomainName "$domain_name.$domain_tld" -Credential $credential -Passthru -Verbose -Force -Restart
-</powershell>
-```
+    # Perform the domain join
+    Add-Computer -DomainName "$domain_name.$domain_tld" -Credential $credential -Passthru -Verbose -Force -Restart
+    </powershell>
+    ```
 
 If you used the same naming conventations throughout this deployment guide, then the only section you have to personalize is the name of your domain and its       assoicated tld. If you deviated the name of the secrets names or any other variables, then you should make the changes above as well.   
     
