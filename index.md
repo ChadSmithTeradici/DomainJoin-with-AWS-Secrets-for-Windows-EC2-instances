@@ -153,8 +153,8 @@ Scroll down to the ** **User data** field in the Advanced Details section.
    ![image](https://github.com/ChadSmithTeradici/Teradici-PCoIP-deployment_script-for-AWS-NVIDIA-Instances/blob/main/images/User_Data_Field.jpg)   
  
  1. Based on your EC2 Instance desired OS you will need either a Windows Powershell script (or) Centos Bash script. These scripts are maintained and updated quartly by Teradici and are avaible on the [Teradici GitHub repo](https://github.com/teradici)
-    Change to your domain name +Example: teradici+
-    Chanage to your tld name +Examaple: dom+
+    + Change to your domain name +Example: teradici+
+    + Chanage to your tld name +Examaple: dom+
     ```
     $domain_name = "teradici".ToUpper() 
     $domain_tld = "dom"                
