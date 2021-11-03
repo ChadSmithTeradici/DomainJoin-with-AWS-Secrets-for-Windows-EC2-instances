@@ -141,10 +141,9 @@ In this section, you procure will procure a EC2 instance through the EC2 Dashboa
 
 1. On the **Choose AMI** page, select the [Windows 2019 Base](https://aws.amazon.com/marketplace/pp/prodview-bd6o47htpbnoe?ref=cns_srchrow) or [Cent0S7](https://aws.amazon.com/marketplace/pp/prodview-qkzypm3vjr45g?ref=cns_srchrow) AMI(s) based on desired OS then press **Select** button.
 
-1. On the **Choose Instance Type** page, keep the default selection of **G4dn Instance familiy types** and choose **Next: Configure Instance Details**.
+1. On the **Choose Instance Type** page, chose a instance type and choose **Next: Configure Instance Details**.
 
-
-1. On the **Configure Instance Details** page, at a minimum fill in **Networking/Subnet/Auto-Assign Public-IP** based on desired Network topology. Take remaining configuration details based your requirements, until you reach the **User data** field in the Advanced Details section.
+1. On the **Configure Instance Details** page, at a minimum fill in **Networking/Subnet/Auto-Assign Public-IP** based on desired Network topology. Take remaining configuration details based your requirements, until you reach the ** **User data** field in the Advanced Details section.
 
     ![image](https://github.com/ChadSmithTeradici/Teradici-PCoIP-deployment_script-for-AWS-NVIDIA-Instances/blob/main/images/User_Data_Field.jpg)
  
