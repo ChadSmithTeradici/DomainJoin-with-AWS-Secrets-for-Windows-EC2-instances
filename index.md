@@ -238,7 +238,7 @@ It is stronly recommended to remove access to the AWS secrets after you have suc
     
 ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Revoke_IAM_Role.jpg)
 
-**Note** An explicit DENY policy will override any ALLOW policies assinged to the same role. If you wanted to re-run the Domain Join script again and access the secrets, you would have to remove the DENY policy. 
+**Note:** An explicit DENY policy will override any ALLOW policies assinged to the same role. If you wanted to re-run the Domain Join script again and access the secrets, you would have to remove the DENY policy first.
     
 **Option 2:** Remove the IAM Role on a per-instance basis through the EC2 Dashboard.
 
