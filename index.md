@@ -253,4 +253,4 @@ It is stronly recommended to remove access to the AWS secrets after you have suc
 
 ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Remove_IAM_Role_Instance.jpg)
 
-![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Apply_No_IAM_Role.jpg)
+![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Apply_No_IAM_Role.jpeg)
