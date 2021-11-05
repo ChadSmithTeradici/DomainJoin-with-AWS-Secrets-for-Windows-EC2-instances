@@ -46,13 +46,13 @@ In this section, you set up some basic resources that the tutorial depends on.
 
 In this section, you create and configure a series of Secrets key/value pairs for authentication functions in scripts.
 
-1. Access [AWS Secrets manager](https://us-west-2.console.aws.amazon.com/secretsmanager/home?region=us-west-2#!/home) is region specfic, so enter the region you want to deploy EC2 instances. In this example we will be using *us-west-2*.
+1. Access [AWS Secrets manager](https://us-west-2.console.aws.amazon.com/secretsmanager/home?region=us-west-2#!/home) is region specific, so enter the region you want to deploy EC2 instances. In this example we will be using *us-west-2*.
 
 1. Select the **Store new secret** button in the upper-right hand corner of the page.
 
 1. In the **New secrets creation** page, select:
     + In secret type: Select **Other type of secrets**.
-    + In the Secrets key/value field create 2 key/vaule pairs: key named **ServiceAccount** with a AD user/service account that can add machines to AD.  Also a named **Password** and its assoicated the AD password created for the user/service created in AD.
+    + In the Secrets key/value field create 2 key/value pairs: key named **ServiceAccount** with a AD user/service account that can add machines to AD.  Also, a named **Password** and its associated the AD password created for the user/service created in AD.
     + Keep the Select the encryption key the default **DefaultEncryptionKey**
     
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Create_New_Secret.jpg)
