@@ -200,8 +200,11 @@ If you used the same naming conventions throughout this deployment guide, then t
 7. On the Configure Security Group page, make the following selections:
 
     + For **Assign a security group**, choose **Create a new security group**.
-    + For **Security group name**, type a descriptive name, such as *pcoip ssh rdp*.
+    + For **Security group name**, type a descriptive name, such as *pcoip ssh rdp dns AD*.
     + For **Description**, optionally add a description.
+    + For **Type**, type **-1(ALL)
+    + For **Port Range** type **-1(ALL)
+    + For **Source**, type *The ID of the security group.*
     + For **Type**, choose **SSH**
     + For **Source**, choose **My IP**
     + Select **Add rule**
