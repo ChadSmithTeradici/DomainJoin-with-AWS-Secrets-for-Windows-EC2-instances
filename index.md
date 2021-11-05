@@ -102,7 +102,7 @@ Select the **JSON** tab, it will open in separate web browser tab. Click on tab 
             "Action": [
                 "secretsmanager:GetSecretValue"
             ],
-            "Resource": "arn:aws:secretsmanager:us-west-2:455311239824:secret:Windows/ServiceAccounts/DomainJoin-8KUbyW",
+            "Resource": "arn:aws:secretsmanager:us-west-2:00000000000:secret:Windows/ServiceAccounts/DomainJoin-000000",
             "Effect": "Allow"
         }    
     ]
