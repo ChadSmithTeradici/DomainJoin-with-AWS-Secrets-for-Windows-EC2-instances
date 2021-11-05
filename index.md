@@ -74,11 +74,11 @@ In this section, you create and configure a series of Secrets key/value pairs fo
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/ConfirmSecrets.jpg)
     
- 1. Once the Secret has been successfully been created, you need to find its assoicated ARN. **Select** the newly created secret and **double-click** Secret Name.
+ 1. Once the Secret has successfully been created, you need to find its assoicated ARN. **Select** the newly created secret and **double-click** Secret Name.
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/List_Secrets.jpg)    
  
-1. Once, In the **Secret Details** page, locate the ARN section and **copy** the associated ARN to later use in the IAM policy creation. 
+1. In the **Secret Details** page, locate the ARN section and **copy** the associated ARN to later use in the IAM policy creation. 
 
     ![image](https://github.com/ChadSmithTeradici/DomainJoin-with-AWS-Secrets-for-Windows-EC2-instances/blob/main/images/Locate_ARN.jpg)
      
@@ -141,7 +141,7 @@ In this section, you procure will procure a EC2 instance through the EC2 Dashboa
 
 1. On the **Choose AMI** page, select the [Windows 2019 Base](https://aws.amazon.com/marketplace/pp/prodview-bd6o47htpbnoe?ref=cns_srchrow) AMI, then press **Select** button.
 
-1. On the **Choose Instance Type** page, chose a instance type and choose **Next: Configure Instance Details**.
+1. On the **Choose Instance Type** page, chose an instance type and choose **Next: Configure Instance Details**.
 
 1. On the **Configure Instance Details** page, at a minimum fill in **Networking/Subnet/Auto-Assign Public-IP** based on desired Network topology. Take remaining configuration details based your requirements, until you reach the **IAM Roles**, then select the name of the IAM role previous created. 
 *(Example: Domain_Join_script)*
@@ -180,7 +180,7 @@ In this section, you procure will procure a EC2 instance through the EC2 Dashboa
     </powershell>
     ```
 
-If you used the same naming conventations throughout this deployment guide, then the only section you have to personalize is the name of your domain and its       assoicated tld. If you deviated the name of the secrets names or any other variables, then you should make the changes above as well  
+If you used the same naming conventions throughout this deployment guide, then the only section you have to personalize is the name of your domain and its       associated tld. If you deviated the name of the secrets names or any other variables, then you should make the changes above as well  
     
 + Change to your domain name *Example: teradici* 
 + Chanage to your tld name *Examaple: dom*
@@ -229,7 +229,7 @@ If you used the same naming conventations throughout this deployment guide, then
 
 It is stronly recommended to remove access to the AWS secrets after you have succefully leveraged the domain join script. A savy end-user could theoretically access the AWS secrets while logged into an instance that still has granted access to the IAM role and they are aware ofthe Secrets Name to call in a function.  
 
-**Option 1:** Apply an explicite Deny to the IAM role that overrides the IAM Policy orginally created**
+**Option 1:** Apply an explicit Deny to the IAM role that overrides the IAM Policy orginally created**
 1. From the [IAM Dashboard](https://console.aws.amazon.com/iam), select the **Role** option in the left pane. 
 
 1. Search for the name of the Role that was previously created. *(Example: Domain_Join_script)*
